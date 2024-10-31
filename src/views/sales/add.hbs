@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Venta</title>
+</head>
+<body>
+  <h1>Agregar Nueva Venta</h1>
+  <form action="/sales/add" method="POST">
+    <label for="product">Producto:</label>
+    <select id="product" name="product" required>
+      {{#each products}}
+        <option value="{{this._id}}">{{this.name}} (Stock: {{this.quantity}})</option>
+      {{/each}}
+    </select>
+    <br>
+    <label for="quantity">Cantidad:</label>
+    <input type="number" id="quantity" name="quantity" required>
+    <br>
+    <label for="total">Total:</label>
+    <input type="number" id="total" name="total" required>
+    <br>
+    <label for="customer">Cliente:</label>
+    <select id="customer" name="customer" required>
+      {{#each clients}}
+        <option value="{{this._id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+    <br>
+    <button type="submit">Agregar Venta</button>
+  </form>
+  <a href="/sales">Volver a Ventas</a>
+</body>
+</html>

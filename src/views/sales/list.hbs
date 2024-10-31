@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ventas</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Lista de Ventas</h1>
+  <a href="/sales/add">Agregar Nueva Venta</a>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+        <th>Nombre del Cliente</th>
+        <th>Fecha</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each sales}}
+        <tr>
+          <td>{{this.product}}</td>
+          <td>{{this.quantity}}</td>
+          <td>{{this.total}}</td>
+          <td>{{this.customerName}}</td>
+          <td>{{this.date}}</td>
+          <td>
+            <a href="/sales/edit/{{this._id}}">Editar</a>
+            <a href="/sales/delete/{{this._id}}">Eliminar</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</body>
+</html>

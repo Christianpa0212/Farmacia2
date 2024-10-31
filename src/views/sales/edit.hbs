@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Venta</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Editar Venta</h1>
+  <form action="/sales/edit/{{sale._id}}" method="POST">
+    <label for="product">Producto:</label>
+    <input type="text" id="product" name="product" value="{{sale.product}}" required>
+    <br>
+    <label for="quantity">Cantidad:</label>
+    <input type="number" id="quantity" name="quantity" value="{{sale.quantity}}" required>
+    <br>
+    <label for="total">Total:</label>
+    <input type="number" id="total" name="total" value="{{sale.total}}" required>
+    <br>
+    <label for="customerName">Nombre del Cliente:</label>
+    <input type="text" id="customerName" name="customerName" value="{{sale.customerName}}">
+    <br>
+    <button type="submit">Actualizar Venta</button>
+  </form>
+  <a href="/sales">Volver a Ventas</a>
+</body>
+</html>
